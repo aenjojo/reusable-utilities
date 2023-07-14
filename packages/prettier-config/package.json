@@ -1,0 +1,20 @@
+{
+  "name": "@aenjojo/prettier-config",
+  "version": "1.0.0",
+  "description": "Reusable config for prettier",
+  "author": "@aenjojo",
+  "packageManager": "yarn@3.5.1",
+  "scripts": {
+    "build": "tsup"
+  },
+  "dependencies": {
+    "prettier": "^3.0.0",
+    "typescript": "^5.1.6"
+  },
+  "devDependencies": {
+    "tsup": "^7.1.0"
+  },
+  "files": [
+    "dist/"
+  ]
+}
