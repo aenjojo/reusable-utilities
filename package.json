@@ -1,0 +1,13 @@
+{
+  "name": "reusable-utilities",
+  "version": "1.0.0",
+  "description": "Reusable utilities, such as config or helper library for all of my projects",
+  "private": true,
+  "repository": "https://github.com/aenjojo/reusable-utilities.git",
+  "author": "@aenjojo",
+  "license": "Apache-2.0",
+  "packageManager": "yarn@3.5.1",
+  "workspaces": [
+    "packages/*"
+  ]
+}
