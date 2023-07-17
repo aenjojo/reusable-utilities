@@ -9,13 +9,16 @@
   "packageManager": "yarn@3.5.1",
   "scripts": {
     "lint": "eslint --fix --ext .ts packages",
-    "format": "prettier --write \"packages/**/*.ts\""
+    "format": "prettier --write \"packages/**/*.ts\"",
+    "postinstall": "husky install"
   },
   "workspaces": [
     "packages/*"
   ],
   "devDependencies": {
     "eslint": "^8.44.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^13.2.3",
     "prettier": "^3.0.0",
     "typescript": "^5.1.6"
   }
