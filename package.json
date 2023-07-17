@@ -7,6 +7,10 @@
   "author": "@aenjojo",
   "license": "Apache-2.0",
   "packageManager": "yarn@3.5.1",
+  "scripts": {
+    "lint": "eslint --fix --ext .ts packages",
+    "format": "prettier --write \"packages/**/*.ts\""
+  },
   "workspaces": [
     "packages/*"
   ],
