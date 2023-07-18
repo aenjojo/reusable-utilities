@@ -18,6 +18,10 @@ jobs:
     steps:
       - name: Checkout Project
         uses: action/checkout@v3
+        with:
+          fetch-depth: 0
+          repository: ${{ github.event.inputs.repository || 'aenjojo/reusable-utilities' }}
+          ref: ${{ github.event.inputs.ref || 'main' }}
       - name: Setup Node v18
         uses: action/setup-node@v3
         with:
