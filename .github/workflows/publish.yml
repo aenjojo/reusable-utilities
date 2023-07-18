@@ -20,14 +20,15 @@ jobs:
         uses: action/checkout@v3
         with:
           fetch-depth: 0
-          repository: ${{ github.event.inputs.repository || 'aenjojo/reusable-utilities' }}
-          ref: ${{ github.event.inputs.ref || 'main' }}
+          repository: ${{ github.repository || 'aenjojo/reusable-utilities' }}
+          ref: ${{ github.ref || 'main' }}
       - name: Setup Node v18
         uses: action/setup-node@v3
         with:
           node-version: 18
           registry-url: 'https://npm.pkg.github.com'
           cache: yarn
+          scope: '@aenjojo'
       - name: Install Dependencies
         run: yarn --immutable
       - name: Build All Packages
