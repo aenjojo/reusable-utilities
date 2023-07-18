@@ -1,0 +1,35 @@
+name: Publish to GitHub registry
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    strategy:
+      matrix:
+        package:
+          - eslint-config
+          - prettier-config
+    steps:
+      - name: Checkout Project
+        uses: action/checkout@v3
+      - name: Setup Node v18
+        uses: action/setup-node@v3
+        with:
+          node-version: 18
+          registry-url: 'https://npm.pkg.github.com'
+          cache: yarn
+      - name: Install Dependencies
+        run: yarn --immutable
+      - name: Build All Packages
+        run: yarn build
+      - name: Publish
+        working-directory: packages/${{ matrix.package }}
+        run: yarn npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GH_PUBLISH_TOKEN }}
