@@ -17,14 +17,13 @@ jobs:
           - prettier-config
     steps:
       - name: Checkout Project
-        uses: action/checkout@v3
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
-          repository: ${{ github.repository_owner }}/${{ matrix.package }}
+          repository: ${{ github.repository || 'aenjojo/reusable-utilities' }}
           ref: ${{ github.ref || 'main' }}
-          path: ${{ matrix.package }}
       - name: Setup Node v18
-        uses: action/setup-node@v3
+        uses: actions/setup-node@v3
         with:
           node-version: 18
           registry-url: 'https://npm.pkg.github.com'
