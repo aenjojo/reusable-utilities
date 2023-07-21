@@ -19,5 +19,10 @@
   ],
   "publishConfig": {
     "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aenjojo/reusable-utilities.git",
+    "directory": "packages/prettier-config"
   }
 }
