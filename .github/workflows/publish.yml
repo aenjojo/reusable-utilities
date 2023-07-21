@@ -20,7 +20,7 @@ jobs:
         uses: action/checkout@v3
         with:
           fetch-depth: 0
-          repository: ${{ github.repository || 'aenjojo/reusable-utilities' }}
+          repository: ${{ github.repository_owner }}/${{ matrix.package }}
           ref: ${{ github.ref || 'main' }}
           path: ${{ matrix.package }}
       - name: Setup Node v18
