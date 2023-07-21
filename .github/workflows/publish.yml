@@ -22,6 +22,7 @@ jobs:
           fetch-depth: 0
           repository: ${{ github.repository || 'aenjojo/reusable-utilities' }}
           ref: ${{ github.ref || 'main' }}
+          path: ${{ matrix.package }}
       - name: Setup Node v18
         uses: action/setup-node@v3
         with:
@@ -32,6 +33,7 @@ jobs:
       - name: Install Dependencies
         run: yarn --immutable
       - name: Build All Packages
+        working-directory: packages/${{ matrix.package }}
         run: yarn build
       - name: Publish
         working-directory: packages/${{ matrix.package }}
