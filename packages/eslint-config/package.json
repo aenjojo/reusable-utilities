@@ -24,6 +24,10 @@
   "publishConfig": {
     "access": "public"
   },
+  "exports": {
+    "require": "./dist/index.js",
+    "import": "./dist/index.js"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/aenjojo/reusable-utilities.git",
