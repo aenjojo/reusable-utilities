@@ -1,6 +1,6 @@
 {
   "name": "@aenjojo/eslint-config",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Reusable config for eslint",
   "author": "@aenjojo",
   "packageManager": "yarn@3.5.1",
